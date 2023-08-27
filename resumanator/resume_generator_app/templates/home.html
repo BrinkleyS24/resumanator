@@ -6,38 +6,29 @@
 
 <form id="resumeForm" method="post">
     {% csrf_token %}
-
-    <label for="name">Name:</label>
-    <input type="text" id="name" name="name" required><br><br>
-
-    <label for="email">Email:</label>
-    <input type="email" id="email" name="email" required><br><br>
-
-    <label for="company">Company Name:</label>
-    <input type="text" id="company" name="company" required><br><br>
-
-    <label for="jobTitle">Job Title:</label>
-    <input type="text" id="jobTitle" name="job_title" required><br><br>
-
+    
+    <input type="text" name="name" placeholder="Name" required><br><br>
+    <input type="email" name="email" placeholder="Email" required><br><br>
+    <input type="text" name="company" placeholder="Company Name" required><br><br>
+    <input type="text" name="job_title" placeholder="Job Title" required><br><br>
+    
     <label for="experience">Work Experience:</label>
     <select id="experience" name="experience">
         <option value="Less than 1">Less than 1</option>
         <option value="1">1</option>
         <option value="2">2</option>
-        <!-- Add more options up to 10+ -->
         <option value="10+">10+</option>
     </select><br><br>
-
+    
     <label for="skills">Skills:</label>
     <ul id="skillsList">
-        <li><input type="text" name="skills[]" required></li>
+        <li><input type="text" name="skills[]" placeholder="Skill" required></li>
     </ul>
     <button type="button" id="addSkill">Add Skill</button><br><br>
-
+    
     <label for="jobDescription">Job Description:</label>
-    <textarea id="jobDescription" name="job_description" required></textarea><br><br>
-
-    <input type="hidden" name="csrfmiddlewaretoken" value="{% csrf_token %}">
+    <textarea id="jobDescription" name="job_description" placeholder="Job Description" required></textarea><br><br>
+    
     <button type="submit">Generate Resume</button>
 </form>
 
