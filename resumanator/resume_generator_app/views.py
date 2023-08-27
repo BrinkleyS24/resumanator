@@ -2,9 +2,12 @@ from django.shortcuts import render
 from django.http import JsonResponse
 from .models import User, Resume
 import openai
+import os
+
 
 # Set your OpenAI API key
-openai.api_key = "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"
+
+api_key = os.environ.get('API_KEY')
 
 def generate_custom_resume(name, email, experience, skills, job_description):
     # Combine user input and job description to create the resume

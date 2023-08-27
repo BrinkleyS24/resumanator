@@ -1,0 +1,16 @@
+# Ignore local development settings
+.env
+
+# Ignore database files
+db.sqlite3
+
+# Ignore compiled Python files
+__pycache__/
+*.pyc
+
+# Ignore static files
+/static/
+/media/
+
+# Ignore virtual environment
+venv/
